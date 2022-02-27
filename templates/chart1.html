@@ -1,0 +1,230 @@
+<div class="chartCard">
+    <div class="chartBox">
+      <p style="text-align:center; font-size: 20px;">Scheme</p>
+      <canvas id="myChart2"></canvas>
+    </div>
+  </div>
+
+
+<script>
+
+  var data1= {
+    labels: ['Gramvikas-Lekhashirsh 2515','Vishesh Nidhi','Thakkar bappa yojana','mahavitran','mahavitran','Jilha Niyojan & Vikas Samiti','Khasdar Nidhi','Thakkar Bappa Yojna','Mahavitran','Jilha Niyojan & Vikas Samiti'],
+    datasets: [{
+    label: 'Latitude',
+      data: [5,7,6,45,15,48,32,45,62,15],
+      backgroundColor: [
+        'rgba(255, 26, 104, 0.2)',
+        'rgba(54, 162, 235, 0.2)',
+        'rgba(255, 206, 86, 0.2)',
+        'rgba(75, 192, 192, 0.2)',
+        'rgba(153, 102, 255, 0.2)',
+        'rgba(255, 159, 64, 0.2)',
+        'rgba(0, 0, 0, 0.2)'
+      ],
+      borderColor: [
+        'rgba(255, 26, 104, 1)',
+        'rgba(54, 162, 235, 1)',
+        'rgba(255, 206, 86, 1)',
+        'rgba(75, 192, 192, 1)',
+        'rgba(153, 102, 255, 1)',
+        'rgba(255, 159, 64, 1)',
+        'rgba(0, 0, 0, 1)'
+      ],
+      borderWidth: 1
+    }]
+  };
+
+  // config 
+  var config2= {
+    type: 'bar',
+    data,
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  };
+
+  // render init block
+  var myChart2 = new Chart(
+    document.getElementById('myChart2').getContext('2d'),
+    config1
+  );
+  </script>
+
+
+  <div class="chartCard">
+    <div class="chartBox">
+      <p style="text-align:center; font-size: 20px;">Gaon</p>
+
+      <canvas id="myChart3"></canvas>
+    </div>
+  </div>
+
+
+
+  <script>
+  // setup 
+  var data3 = {
+    labels: ['CHIKHALI', 'MIRZAPUR', 'MIRZAPUR', 'GUNJALWADI', 'KURAN', 'SAVARGAON TAL', 'PEMGIRI', 'MENGALWADI', 'KURAN', 'MALDAD'],
+    datasets: [{
+      label: 'Latitude',
+      data: [36.42,36.45,44.32,43.55,5.2,63.45,53.63,45.66,5.23,23],
+      backgroundColor: [
+        'rgba(255, 26, 104, 0.2)',
+        'rgba(54, 162, 235, 0.2)',
+        'rgba(255, 206, 86, 0.2)',
+        'rgba(75, 192, 192, 0.2)',
+        'rgba(153, 102, 255, 0.2)',
+        'rgba(255, 159, 64, 0.2)',
+        'rgba(0, 0, 0, 0.2)'
+      ],
+      borderColor: [
+        'rgba(255, 26, 104, 1)',
+        'rgba(54, 162, 235, 1)',
+        'rgba(255, 206, 86, 1)',
+        'rgba(75, 192, 192, 1)',
+        'rgba(153, 102, 255, 1)',
+        'rgba(255, 159, 64, 1)',
+        'rgba(0, 0, 0, 1)'
+      ],
+      borderWidth: 1
+    }]
+  };
+
+  // config 
+  var config3 = {
+    type: 'bar',
+    data,
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  };
+
+  // render init block
+  var myChart3 = new Chart(
+    document.getElementById('myChart3'),
+    config
+  );
+</script>
+  <div class="chartCard">
+    <div class="chartBox">
+      <p style="text-align:center; font-size: 20px;">Work Type</p>
+
+      <canvas id="myChart4"></canvas>
+    </div>
+  </div>
+
+
+<script>
+
+  var data4= {
+    labels: ['Talathi office', 'Gharkul', 'Gatare', 'Anudan', 'Samajik Sabhagruh', 'Bandhare', 'Panipurvtha', 'Tirthshetra Vikas', 'Samajik Sabhagruh', 'Samajik Sabhagruh'],
+    datasets: [{
+      label: 'Latitude',
+      data: [36.42,36.45,44.32,43.5,5.2,63.45,53.63,45.66,5.23,23],
+      backgroundColor: [
+        'rgba(255, 26, 104, 0.2)',
+        'rgba(54, 162, 235, 0.2)',
+        'rgba(255, 206, 86, 0.2)',
+        'rgba(75, 192, 192, 0.2)',
+        'rgba(153, 102, 255, 0.2)',
+        'rgba(255, 159, 64, 0.2)',
+        'rgba(0, 0, 0, 0.2)'
+      ],
+      borderColor: [
+        'rgba(255, 26, 104, 1)',
+        'rgba(54, 162, 235, 1)',
+        'rgba(255, 206, 86, 1)',
+        'rgba(75, 192, 192, 1)',
+        'rgba(153, 102, 255, 1)',
+        'rgba(255, 159, 64, 1)',
+        'rgba(0, 0, 0, 1)'
+      ],
+      borderWidth: 1
+    }]
+  };
+
+  // config 
+  var config4 = {
+    type: 'bar',
+    data,
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  };
+
+  // render init block
+  var myChart4 = new Chart(
+    document.getElementById('myChart4'),
+    config1
+  );
+  </script>
+
+  <div class="chartCard">
+    <div class="chartBox">
+      <p style="text-align:center; font-size: 20px;">Scheme</p>
+      <canvas id="myChart5"></canvas>
+    </div>
+  </div>
+
+
+<script>
+
+  var data5= {
+    labels: ['Gramvikas-Lekhashirsh 2515','Vishesh Nidhi','Thakkar bappa yojana','mahavitran','mahavitran','Jilha Niyojan & Vikas Samiti','Khasdar Nidhi','Thakkar Bappa Yojna','Mahavitran','Jilha Niyojan & Vikas Samiti'],
+    datasets: [{
+      label: 'Approximate',
+      data: [36.42,36.45,44.32,43.5,5.2,63.45,53.63,45.66,5.23,23],
+      backgroundColor: [
+        'rgba(255, 26, 104, 0.2)',
+        'rgba(54, 162, 235, 0.2)',
+        'rgba(255, 206, 86, 0.2)',
+        'rgba(75, 192, 192, 0.2)',
+        'rgba(153, 102, 255, 0.2)',
+        'rgba(255, 159, 64, 0.2)',
+        'rgba(0, 0, 0, 0.2)'
+      ],
+      borderColor: [
+        'rgba(255, 26, 104, 1)',
+        'rgba(54, 162, 235, 1)',
+        'rgba(255, 206, 86, 1)',
+        'rgba(75, 192, 192, 1)',
+        'rgba(153, 102, 255, 1)',
+        'rgba(255, 159, 64, 1)',
+        'rgba(0, 0, 0, 1)'
+      ],
+      borderWidth: 1
+    }]
+  };
+
+  // config 
+  var config5= {
+    type: 'bar',
+    data,
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  };
+
+  // render init block
+  var myChart5 = new Chart(
+    document.getElementById('myChart5'),
+    config1
+  );
+  </script>

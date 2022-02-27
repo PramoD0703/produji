@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>Table layout</title>
+
+    <style>
+
+        #myTable{
+            border-collapse: collapse;
+            margin: 25px 0;
+            font-size: 1em;
+            min-width: 400px;
+            border-radius: 5px 5px 0 0;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+          }
+          
+          #myTable thead tr {
+            background-color: #009879;
+            color: #ffffff;
+            text-align: left;
+            font-weight: bold;
+          }
+          
+          #myTable th,
+          #myTable td {
+            padding: 11px 11px;
+            font-style:bold;
+          }
+          
+          #myTable tbody tr {
+            border-bottom: 1px solid #dddddd;
+          }
+          
+          #myTable tbody tr:nth-of-type(even) {
+            background-color: #f3f3f3;
+          }
+          
+          #myTable tbody tr:last-of-type {
+            border-bottom: 2px solid #009879;
+          }
+          #myTable tbody tr.active-row {
+            font-weight: bold;
+            color: #009879;
+          }
+          
+          .navbar{
+              background-color:#f2f2f2;
+              
+          }
+          .navbar-brand{
+            font-size: 3rem;
+            float: left;
+            margin: 2px;
+            margin-left: 12px;
+            
+            border-radius: 8px;
+            
+        }
+          }
+          .btn-outline-success {
+            align:right;
+            color: #198754;
+            border-color: #198754;
+        
+          }
+          .btn{
+            background-color: #800000;
+            border: none;
+            color: white;
+            padding: 9px 11px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 13px;
+            margin: 4px 2px;
+            cursor: pointer;
+            float: right;
+            margin-top: 14px;
+            border-radius: 5px;
+          }
+          #form-control{
+            display: block;
+            width: 20%;
+            padding: 0.375rem 0.75rem;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #212529;
+            background-color: #fff;
+            background-clip: padding-box;
+            border: solid #800000;
+            border-radius: 7px;
+            float: right;
+            margin-top: 10px;
+            margin-right: 12px;
+          }
+
+</style>
+</head>
+
+
+<body>
+    
+    <nav class="navbar">
+        <div class="container-fluid">
+          <a class="navbar-brand">Vikaskame</a>
+          <form class="d-flex">
+            
+            <button class="btn btn-outline-success" type="submit">Search</button>
+            <input type="text" id="form-control" onkeyup="myFunction()" placeholder="Search" aria-label="Search">
+          </form>
+        </nav>
+        </div>
+   
+
+        <table id="myTable">
+     <thead>
+          <tr>
+              <th>Vk_id</th>
+              <th>Janasevak_id</th>
+              <th>Gaon</th>
+              <th>Month_Year</th>
+              <th>work_Type</th>
+              <th>Scheme</th>
+              <th>Work_Name</th>
+                <th>Work_Tapshil</th>
+                <th>Appr_Cost</th>
+                <th>Final_Cost</th>
+                <th>Contr_Name</th>
+                <th>Contr_Mob</th>
+                <th>Work_Status</th>
+                <th>Comment</th>
+                <th>Attach_Type</th>
+                <th>Image_Count</th>
+                <th>lat</th>
+                <th>lng</th>
+                <th>Created_Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>154</td>
+                <td>10</td>
+                <td>Chikhali</td>
+                <td>Jun-22</td>
+                <td>Talathi Karyalay</td>
+                <td>Gramvikas-Lekhashirsh 2515</td>
+                <td>ilfo</td>
+                <td>fffe</td>
+                <td>36.42</td>
+                <td>23.43</td>
+                <td>ghijh</td>
+                <td>5545478956</td>
+                <td>incompleted</td>
+                <td>gjbdg</td>
+                <td>2</td>
+                <td>2</td>
+                <td>21.1458004</td>
+                <td>79.0881546</td>
+                <td>#######</td>
+            </tr>
+            <tr>
+                <td>155</td>
+                <td>10</td>
+                <td>Mirzapur</td>
+                <td>May-22</td>
+                <td>Gharkul</td>
+                <td>Vishesh nidhi</td>
+                <td>kilkd</td>
+                <td>fahsu</td>
+                <td>36.45</td>
+                <td>54.35</td>
+                <td>bgesd</td>
+                <td>4787542548</td>
+                <td>incompleted</td>
+                <td>fhtddf</td>
+                <td>3</td>
+                <td>3</td>
+                <td>19.965188</td>
+                <td>73.651787</td>
+                <td>#######</td>
+            </tr>
+            <tr>
+                <td>156</td>
+                <td>10</td>
+                <td>Mirzapur</td>
+                <td>Jul-22</td>
+                <td>gatare</td>
+                <td>Thakkar bappa yojna</td>
+                <td>fhf</td>
+                <td>thf</td>
+                <td>44.32</td>
+                <td>32.34</td>
+                <td>jfbdj</td>
+                <td>6548792458</td>
+                <td>incompleted</td>
+                <td>dfreh</td>
+                <td>1</td>
+                <td>1</td>
+                <td>18.524797</td>
+                <td>73.903599</td>
+                <td>#######</td>
+            </tr>
+            <tr>
+                <td>157</td>
+                <td>11</td>
+                <td>Gunjalwadi</td>
+                <td>apr-22</td>
+                <td>Anudan</td>
+                <td>Mahavitaran</td>
+                <td>asdfgh</td>
+                <td>werte</td>
+                <td>43.55</td>
+                <td>42.34</td>
+                <td>ghijh</td>
+                <td>7458624582</td>
+                <td>incompleted</td>
+                <td>eghhjyh</td>
+                <td>2</td>
+                <td>2</td>
+                <td>19.051512</td>
+                <td>72.998753</td>
+                <td>#######</td>
+            </tr>
+            <tr>
+                <td>158</td>
+                <td>1</td>
+                <td>Kuran</td>
+                <td>Feb-22</td>
+                <td>Samajik sabhagruh</td>
+                <td>Mahavitaran</td>
+                <td>fgchhjsd</td>
+                <td>fjjb</td>
+                <td>5.2</td>
+                <td>5.09</td>
+                <td>dps</td>
+                <td>4985726584</td>
+                <td>In the process</td>
+                <td>fbngtddg</td>
+                <td>1</td>
+                <td>1</td>
+                <td>18.5427</td>
+                <td>73.866349</td>
+                <td>#######</td>
+            </tr>
+            <tr>
+                <td>159</td>
+                <td>8</td>
+                <td>savargav Tal</td>
+                <td>jul-22</td>
+                <td>Bandhare</td>
+                <td>Jilha niyojan va vikas samiti</td>
+                <td>hartd</td>
+                <td>dddp</td>
+                <td>63.45</td>
+                <td>23.45</td>
+                <td>fdhgfhv</td>
+                <td>6578945424</td>
+                <td>in the process</td>
+                <td>dfjdbf</td>
+                <td>2</td>
+                <td>2</td>
+                <td>18.508577</td>
+                <td>73.831485</td>
+                <td>#######</td>
+            </tr>
+            <tr>
+                <td>160</td>
+                <td>8</td>
+                <td>Pemgiri</td>
+                <td>jul-22</td>
+                <td>Panipurvatha</td>
+                <td>Khasdar nidhi</td>
+                <td>ghh</td>
+                <td>tyuu</td>
+                <td>53.63</td>
+                <td>23.14</td>
+                <td>rtyreg</td>
+                <td>3214567895</td>
+                <td>incompleted</td>
+                <td>bdhhfg</td>
+                <td>2</td>
+                <td>2</td>
+                <td>18.532757</td>
+                <td>73.800273</td>
+                <td>#######</td>
+            </tr>
+            <tr>
+                <td>161</td>
+                <td>8</td>
+                <td>Mengalwadi</td>
+                <td>oct-22</td>
+                <td>Tirthshretra vikas </td>
+                <td>Thakkar bappa yojna</td>
+                <td>hsrsfv</td>
+                <td>ppppss</td>
+                <td>45.66</td>
+                <td>32.64</td>
+                <td>fwfgh</td>
+                <td>6578424584</td>
+                <td>incompleted</td>
+                <td>hrhrth</td>
+                <td>3</td>
+                <td>3</td>
+                <td>18.489204</td>
+                <td>73.795951</td>
+                <td>#######</td>
+            </tr>
+            <tr>
+                <td>162</td>
+                <td>1</td>
+                <td>Kuran</td>
+                <td>feb-22</td>
+                <td>Samajik sabhagruh</td>
+                <td>Mahavitaran</td>
+                <td>hdfef</td>
+                <td>bdthrg</td>
+                <td>5.23</td>
+                <td>5.1</td>
+                <td>rgdrrt</td>
+                <td>7845454865</td>
+                <td>in the process</td>
+                <td>drtgdtd</td>
+                <td>2</td>
+                <td>2</td>
+                <td>18.532557</td>
+                <td>73.805273</td>
+                <td>#######</td>
+            </tr>
+            <tr>
+                <td>163</td>
+                <td>1</td>
+                <td>Maldad</td>
+                <td>may-22</td>
+                <td>Samajik sabhagruh</td>
+                <td>Jilha niyojan va vikas samiti</td>
+                <td>dbcdr</td>
+                <td>ptdgvg</td>
+                <td>23</td>
+                <td>21</td>
+                <td>nhgrrt</td>
+                <td>9999999999</td>
+                <td>completed</td>
+                <td>well</td>
+                <td>1</td>
+                <td>1</td>
+                <td>19.6096184</td>
+                <td>74.1900857</td>
+                <td>#######</td>
+            </tr>
+        </tbody>
+        </table>
+        <script>
+          function myFunction() {
+            var input, filter, table, tr, td, i;
+            input = document.getElementById("form-control");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("myTable");
+            var rows = table.getElementsByTagName("tr");
+            for (i = 0; i < rows.length; i++) {
+              var cells = rows[i].getElementsByTagName("td");
+              var j;
+              var rowContainsFilter = false;
+              for (j = 0; j < cells.length; j++) {
+                if (cells[j]) {
+                  if (cells[j].innerHTML.toUpperCase().indexOf(filter) > -1) {
+                    rowContainsFilter = true;
+                    continue;
+                  }
+                }
+              }
+          
+              if (! rowContainsFilter) {
+                rows[i].style.display = "none";
+              } else {
+                rows[i].style.display = "";
+              }
+            }
+          }
+          </script>
+    </body>
+    </html>

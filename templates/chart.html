@@ -1,0 +1,667 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VikasKame Details</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+      }
+      .chartMenu {
+        width: 100vw;
+        height: 40px;
+        background: #1A1A1A;
+        color: rgba(255, 26, 104, 1);
+      }
+      .chartMenu p {
+        padding: 10px;
+        font-size: 20px;
+      }
+      .chartCard {
+        width: 100vw;
+        height: calc(100vh - 40px);
+        background: rgba(255, 26, 104, 0.2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .chartBox {
+        width: 770px;
+        padding: 20px;
+        border-radius: 20px;
+        border: solid 3px rgba(255, 26, 104, 1);
+        background: white;
+        height:400px
+      }
+    </style>
+  </head>
+  <body>
+    <div class="chartMenu">
+      <p>Vikaskame</p>
+    </div>
+    <div class="chartCard">
+      <div class="chartBox">
+        <p style="text-align:center; font-size: 20px;">Gaon- Cost</p>
+
+        <canvas id="myChart"></canvas>
+      </div>
+    </div>
+
+  
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+      <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-datalabels/2.0.0/chartjs-plugin-datalabels.min.js" integrity="sha512-R/QOHLpV1Ggq22vfDAWYOaMd5RopHrJNMxi8/lJu8Oihwi4Ho4BRFeiMiCefn9rasajKjnx9/fTQ/xkWnkDACg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      <script>
+    // setup 
+    var data = {
+      labels: ['CHIKHALI', 'MIRZAPUR', 'MIRZAPUR', 'GUNJALWADI', 'KURAN', 'SAVARGAON TAL', 'PEMGIRI', 'MENGALWADI', 'KURAN', 'MALDAD'],
+      datasets: [{
+        label: 'Approximate',
+        data: [36.42,36.45,44.32,43.55,5.2,63.45,53.63,45.66,5.23,23],
+        backgroundColor: [
+          'rgba(255, 26, 104, 0.2)',
+          'rgba(54, 162, 235, 0.2)',
+          'rgba(255, 206, 86, 0.2)',
+          'rgba(75, 192, 192, 0.2)',
+          'rgba(153, 102, 255, 0.2)',
+          'rgba(255, 159, 64, 0.2)',
+          'rgba(0, 0, 0, 0.2)'
+        ],
+        borderColor: [
+          'rgba(255, 26, 104, 1)',
+          'rgba(54, 162, 235, 1)',
+          'rgba(255, 206, 86, 1)',
+          'rgba(75, 192, 192, 1)',
+          'rgba(153, 102, 255, 1)',
+          'rgba(255, 159, 64, 1)',
+          'rgba(0, 0, 0, 1)'
+        ],
+        random:['incompleted','incompleted','incompleted','incompleted','in the process','in the process','incompleted','incompleted','in the process','completed'],
+
+        borderWidth: 1
+      },{
+        label: 'Final Cost',
+        data: [23.43,54.35,32.34,42.34,5.09,23.45,23.14,32.64,53.63,45.66,5.23,23],
+        backgroundColor: [
+          'rgba(255, 26, 104, 0.2)',
+          'rgba(54, 162, 235, 0.2)',
+          'rgba(255, 206, 86, 0.2)',
+          'rgba(75, 192, 192, 0.2)',
+          'rgba(153, 102, 255, 0.2)',
+          'rgba(255, 159, 64, 0.2)',
+          'rgba(0, 0, 0, 0.2)'
+        ],
+        borderColor: [
+          'rgba(255, 26, 104, 1)',
+          'rgba(54, 162, 235, 1)',
+          'rgba(255, 206, 86, 1)',
+          'rgba(75, 192, 192, 1)',
+          'rgba(153, 102, 255, 1)',
+          'rgba(255, 159, 64, 1)',
+          'rgba(0, 0, 0, 1)'
+        ],
+        random:['incompleted','incompleted','incompleted','incompleted','in the process','in the process','incompleted','incompleted','in the process','completed'],
+
+        borderWidth: 1
+      }]
+    };
+
+    // config 
+    var config = {
+      type: 'bar',
+      data,
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        },
+        plugins:{
+          tooltip:{
+            enabled:false
+          },
+          datalabels:{
+            anchor:'end',
+            align:'top',
+            formatter: (value, context) => {
+              console.log(context.active)
+              if(context.active === true){
+              return context.dataset.random[context.dataIndex];
+              }else{
+                return value;
+              }
+            }
+          }
+        }
+      },
+      plugins:[ChartDataLabels]
+    };
+
+    // render init block
+    var myChart = new Chart(
+      document.getElementById('myChart'),
+      config
+    );
+  </script>
+    <div class="chartCard">
+      <div class="chartBox">
+        <p style="text-align:center; font-size: 20px;">Work Type- Cost</p>
+
+        <canvas id="myChart1"></canvas>
+      </div>
+    </div>
+
+
+  <script>
+
+    var data= {
+      labels: ['Talathi office', 'Gharkul', 'Gatare', 'Anudan', 'Samajik Sabhagruh', 'Bandhare', 'Panipurvtha', 'Tirthshetra Vikas', 'Samajik Sabhagruh', 'Samajik Sabhagruh'],
+      datasets: [{
+        label: 'Approximate',
+        data: [36.42,36.45,44.32,43.55,5.2,63.45,53.63,45.66,5.23,23],
+        backgroundColor: [
+          'rgba(255, 26, 104, 0.2)',
+          'rgba(54, 162, 235, 0.2)',
+          'rgba(255, 206, 86, 0.2)',
+          'rgba(75, 192, 192, 0.2)',
+          'rgba(153, 102, 255, 0.2)',
+          'rgba(255, 159, 64, 0.2)',
+          'rgba(0, 0, 0, 0.2)'
+        ],
+        borderColor: [
+          'rgba(255, 26, 104, 1)',
+          'rgba(54, 162, 235, 1)',
+          'rgba(255, 206, 86, 1)',
+          'rgba(75, 192, 192, 1)',
+          'rgba(153, 102, 255, 1)',
+          'rgba(255, 159, 64, 1)',
+          'rgba(0, 0, 0, 1)'
+        ],
+        random:['incompleted','incompleted','incompleted','incompleted','in the process','in the process','incompleted','incompleted','in the process','completed'],
+
+        borderWidth: 1
+      },{
+        label: 'Final Cost',
+        data: [23.43,54.35,32.34,42.34,5.09,23.45,23.14,32.64,53.63,45.66,5.23,23],
+        backgroundColor: [
+          'rgba(255, 26, 104, 0.2)',
+          'rgba(54, 162, 235, 0.2)',
+          'rgba(255, 206, 86, 0.2)',
+          'rgba(75, 192, 192, 0.2)',
+          'rgba(153, 102, 255, 0.2)',
+          'rgba(255, 159, 64, 0.2)',
+          'rgba(0, 0, 0, 0.2)'
+        ],
+        borderColor: [
+          'rgba(255, 26, 104, 1)',
+          'rgba(54, 162, 235, 1)',
+          'rgba(255, 206, 86, 1)',
+          'rgba(75, 192, 192, 1)',
+          'rgba(153, 102, 255, 1)',
+          'rgba(255, 159, 64, 1)',
+          'rgba(0, 0, 0, 1)'
+        ],
+        random:['incompleted','incompleted','incompleted','incompleted','in the process','in the process','incompleted','incompleted','in the process','completed'],
+
+        borderWidth: 1
+      }]
+    };
+
+    // config 
+    var config1 = {
+      type: 'bar',
+      data,
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        },
+        plugins:{
+          tooltip:{
+            enabled:false
+          },
+          datalabels:{
+            anchor:'end',
+            align:'top',
+            formatter: (value, context) => {
+              console.log(context.active)
+              if(context.active === true){
+              return context.dataset.random[context.dataIndex];
+              }else{
+                return value;
+              }
+            }
+          }
+        }
+      },
+      plugins:[ChartDataLabels]
+    };
+
+    // render init block
+    var myChart1 = new Chart(
+      document.getElementById('myChart1'),
+      config1
+    );
+    </script>
+
+    <div class="chartCard">
+      <div class="chartBox">
+        <p style="text-align:center; font-size: 20px;">Scheme- Cost</p>
+        <canvas id="myChart2"></canvas>
+      </div>
+    </div>
+
+
+  <script>
+
+    var data= {
+      labels: ['Gramvikas-Lekhashirsh 2515','Vishesh Nidhi','Thakkar bappa yojana','mahavitran','mahavitran','Jilha Niyojan & Vikas Samiti','Khasdar Nidhi','Thakkar Bappa Yojna','Mahavitran','Jilha Niyojan & Vikas Samiti'],
+      datasets: [{
+        label: 'Approximate',
+        data: [36.42,36.45,44.32,43.55,5.2,63.45,53.63,45.66,5.23,23],
+        backgroundColor: [
+          'rgba(255, 26, 104, 0.2)',
+          'rgba(54, 162, 235, 0.2)',
+          'rgba(255, 206, 86, 0.2)',
+          'rgba(75, 192, 192, 0.2)',
+          'rgba(153, 102, 255, 0.2)',
+          'rgba(255, 159, 64, 0.2)',
+          'rgba(0, 0, 0, 0.2)'
+        ],
+        borderColor: [
+          'rgba(255, 26, 104, 1)',
+          'rgba(54, 162, 235, 1)',
+          'rgba(255, 206, 86, 1)',
+          'rgba(75, 192, 192, 1)',
+          'rgba(153, 102, 255, 1)',
+          'rgba(255, 159, 64, 1)',
+          'rgba(0, 0, 0, 1)'
+        ],
+        random:['incompleted','incompleted','incompleted','incompleted','in the process','in the process','incompleted','incompleted','in the process','completed'],
+
+        borderWidth: 1
+      },{
+        label: 'Final Cost',
+        data: [23.43,54.35,32.34,42.34,5.09,23.45,23.14,32.64,53.63,45.66,5.23,23],
+        backgroundColor: [
+          'rgba(255, 26, 104, 0.2)',
+          'rgba(54, 162, 235, 0.2)',
+          'rgba(255, 206, 86, 0.2)',
+          'rgba(75, 192, 192, 0.2)',
+          'rgba(153, 102, 255, 0.2)',
+          'rgba(255, 159, 64, 0.2)',
+          'rgba(0, 0, 0, 0.2)'
+        ],
+        borderColor: [
+          'rgba(255, 26, 104, 1)',
+          'rgba(54, 162, 235, 1)',
+          'rgba(255, 206, 86, 1)',
+          'rgba(75, 192, 192, 1)',
+          'rgba(153, 102, 255, 1)',
+          'rgba(255, 159, 64, 1)',
+          'rgba(0, 0, 0, 1)'
+        ],
+        random:['incompleted','incompleted','incompleted','incompleted','in the process','in the process','incompleted','incompleted','in the process','completed'],
+
+        borderWidth: 1
+      }]
+    };
+
+
+    // config 
+    var config2= {
+      type: 'bar',
+      data,
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        },
+        plugins:{
+          tooltip:{
+            enabled:false
+          },
+          datalabels:{
+            anchor:'end',
+            align:'top',
+            formatter: (value, context) => {
+              console.log(context.active)
+              if(context.active === true){
+              return context.dataset.random[context.dataIndex];
+              }else{
+                return value;
+              }
+            }
+          }
+        }
+      },
+      plugins:[ChartDataLabels]
+    };
+
+
+    // render init block
+    var myChart2 = new Chart(
+      document.getElementById('myChart2').getContext('2d'),
+      config2
+    );
+    </script>
+
+
+    <div class="chartCard">
+      <div class="chartBox">
+        <p style="text-align:center; font-size: 20px;">Gaon- Lat&Lng</p>
+
+        <canvas id="myChart3"></canvas>
+      </div>
+    </div>
+
+  
+
+    <script>
+    // setup 
+    var data = {
+      labels: ['CHIKHALI', 'MIRZAPUR', 'MIRZAPUR', 'GUNJALWADI', 'KURAN', 'SAVARGAON TAL', 'PEMGIRI', 'MENGALWADI', 'KURAN', 'MALDAD'],
+      datasets: [{
+        label: 'Latitude',
+        data: [21.1458,19.9651,18.5247,19.0515,18.5427,18.5085,18.5327,18.4892,18.5325,19.6096],
+        backgroundColor: [
+          'rgba(255, 26, 104, 0.2)',
+          'rgba(54, 162, 235, 0.2)',
+          'rgba(255, 206, 86, 0.2)',
+          'rgba(75, 192, 192, 0.2)',
+          'rgba(153, 102, 255, 0.2)',
+          'rgba(255, 159, 64, 0.2)',
+          'rgba(0, 0, 0, 0.2)'
+        ],
+        borderColor: [
+          'rgba(255, 26, 104, 1)',
+          'rgba(54, 162, 235, 1)',
+          'rgba(255, 206, 86, 1)',
+          'rgba(75, 192, 192, 1)',
+          'rgba(153, 102, 255, 1)',
+          'rgba(255, 159, 64, 1)',
+          'rgba(0, 0, 0, 1)'
+        ],
+        random:['incompleted','incompleted','incompleted','incompleted','in the process','in the process','incompleted','incompleted','in the process','completed'],
+
+        borderWidth: 1
+      },{
+        label: 'Longitude',
+        data: [79.0881,73.6517,73.9035,72.9987,73.8663,73.8314,73.8002,73.7959,73.802,74.1900],
+        backgroundColor: [
+          'rgba(255, 26, 104, 0.2)',
+          'rgba(54, 162, 235, 0.2)',
+          'rgba(255, 206, 86, 0.2)',
+          'rgba(75, 192, 192, 0.2)',
+          'rgba(153, 102, 255, 0.2)',
+          'rgba(255, 159, 64, 0.2)',
+          'rgba(0, 0, 0, 0.2)'
+        ],
+        borderColor: [
+          'rgba(255, 26, 104, 1)',
+          'rgba(54, 162, 235, 1)',
+          'rgba(255, 206, 86, 1)',
+          'rgba(75, 192, 192, 1)',
+          'rgba(153, 102, 255, 1)',
+          'rgba(255, 159, 64, 1)',
+          'rgba(0, 0, 0, 1)'
+        ],
+        random:['incompleted','incompleted','incompleted','incompleted','in the process','in the process','incompleted','incompleted','in the process','completed'],
+
+        borderWidth: 1
+      }]
+    };
+
+    // config 
+    var config3 = {
+      type: 'bar',
+      data,
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        },
+        plugins:{
+          tooltip:{
+            enabled:false
+          },
+          datalabels:{
+            anchor:'end',
+            align:'top',
+            formatter: (value, context) => {
+              console.log(context.active)
+              if(context.active === true){
+              return context.dataset.random[context.dataIndex];
+              }else{
+                return value;
+              }
+            }
+          }
+        }
+      },
+      plugins:[ChartDataLabels]
+    };
+
+
+    // render init block
+    var myChart3 = new Chart(
+      document.getElementById('myChart3'),
+      config3
+    );
+  </script>
+    <div class="chartCard">
+      <div class="chartBox">
+        <p style="text-align:center; font-size: 20px;">Work Type- Lat&Lng</p>
+
+        <canvas id="myChart4"></canvas>
+      </div>
+    </div>
+  </script>
+
+
+  <script>
+
+    var data= {
+      labels: ['Talathi office', 'Gharkul', 'Gatare', 'Anudan', 'Samajik Sabhagruh', 'Bandhare', 'Panipurvtha', 'Tirthshetra Vikas', 'Samajik Sabhagruh', 'Samajik Sabhagruh'],
+      datasets: [{
+        label: 'Latitude',
+        data: [21.1458,19.9651,18.5247,19.0515,18.5427,18.5085,18.5327,18.4892,18.5325,19.6096],
+        backgroundColor: [
+          'rgba(255, 26, 104, 0.2)',
+          'rgba(54, 162, 235, 0.2)',
+          'rgba(255, 206, 86, 0.2)',
+          'rgba(75, 192, 192, 0.2)',
+          'rgba(153, 102, 255, 0.2)',
+          'rgba(255, 159, 64, 0.2)',
+          'rgba(0, 0, 0, 0.2)'
+        ],
+        borderColor: [
+          'rgba(255, 26, 104, 1)',
+          'rgba(54, 162, 235, 1)',
+          'rgba(255, 206, 86, 1)',
+          'rgba(75, 192, 192, 1)',
+          'rgba(153, 102, 255, 1)',
+          'rgba(255, 159, 64, 1)',
+          'rgba(0, 0, 0, 1)'
+        ],
+        random:['incompleted','incompleted','incompleted','incompleted','in the process','in the process','incompleted','incompleted','in the process','completed'],
+
+        borderWidth: 1
+      },{
+        label: 'Longitude',
+        data: [79.0881,73.6517,73.9035,72.9987,73.8663,73.8314,73.8002,73.7959,73.802,74.1900],
+        backgroundColor: [
+          'rgba(255, 26, 104, 0.2)',
+          'rgba(54, 162, 235, 0.2)',
+          'rgba(255, 206, 86, 0.2)',
+          'rgba(75, 192, 192, 0.2)',
+          'rgba(153, 102, 255, 0.2)',
+          'rgba(255, 159, 64, 0.2)',
+          'rgba(0, 0, 0, 0.2)'
+        ],
+        borderColor: [
+          'rgba(255, 26, 104, 1)',
+          'rgba(54, 162, 235, 1)',
+          'rgba(255, 206, 86, 1)',
+          'rgba(75, 192, 192, 1)',
+          'rgba(153, 102, 255, 1)',
+          'rgba(255, 159, 64, 1)',
+          'rgba(0, 0, 0, 1)'
+        ],
+        random:['incompleted','incompleted','incompleted','incompleted','in the process','in the process','incompleted','incompleted','in the process','completed'],
+
+        borderWidth: 1
+      }]
+    };
+
+    // config 
+    var config4 = {
+      type: 'bar',
+      data,
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        },
+        plugins:{
+          tooltip:{
+            enabled:false
+          },
+          datalabels:{
+            anchor:'end',
+            align:'top',
+            formatter: (value, context) => {
+              console.log(context.active)
+              if(context.active === true){
+              return context.dataset.random[context.dataIndex];
+              }else{
+                return value;
+              }
+            }
+          }
+        }
+      },
+      plugins:[ChartDataLabels]
+    };
+
+
+    // render init block
+    var myChart4 = new Chart(
+      document.getElementById('myChart4'),
+      config4
+    );
+    </script>
+
+    <div class="chartCard">
+      <div class="chartBox">
+        <p style="text-align:center; font-size: 20px;">Scheme- Lat&Lng</p>
+        <canvas id="myChart5"></canvas>
+      </div>
+    </div>
+
+
+  <script>
+
+    var data= {
+      labels: ['Gramvikas-Lekhashirsh 2515','Vishesh Nidhi','Thakkar bappa yojana','mahavitran','mahavitran','Jilha Niyojan & Vikas Samiti','Khasdar Nidhi','Thakkar Bappa Yojna','Mahavitran','Jilha Niyojan & Vikas Samiti'],
+      datasets: [{
+        label: 'Latitude',
+        data: [21.1458,19.9651,18.5247,19.0515,18.5427,18.5085,18.5327,18.4892,18.5325,19.6096],
+        backgroundColor: [
+          'rgba(255, 26, 104, 0.2)',
+          'rgba(54, 162, 235, 0.2)',
+          'rgba(255, 206, 86, 0.2)',
+          'rgba(75, 192, 192, 0.2)',
+          'rgba(153, 102, 255, 0.2)',
+          'rgba(255, 159, 64, 0.2)',
+          'rgba(0, 0, 0, 0.2)'
+        ],
+        borderColor: [
+          'rgba(255, 26, 104, 1)',
+          'rgba(54, 162, 235, 1)',
+          'rgba(255, 206, 86, 1)',
+          'rgba(75, 192, 192, 1)',
+          'rgba(153, 102, 255, 1)',
+          'rgba(255, 159, 64, 1)',
+          'rgba(0, 0, 0, 1)'
+        ],
+        random:['incompleted','incompleted','incompleted','incompleted','in the process','in the process','incompleted','incompleted','in the process','completed'],
+
+        borderWidth: 1
+      },{
+        label: 'Longitude',
+        data: [79.0881,73.6517,73.9035,72.9987,73.8663,73.8314,73.8002,73.7959,73.802,74.1900],
+        backgroundColor: [
+          'rgba(255, 26, 104, 0.2)',
+          'rgba(54, 162, 235, 0.2)',
+          'rgba(255, 206, 86, 0.2)',
+          'rgba(75, 192, 192, 0.2)',
+          'rgba(153, 102, 255, 0.2)',
+          'rgba(255, 159, 64, 0.2)',
+          'rgba(0, 0, 0, 0.2)',
+        ],
+        borderColor: [
+          'rgba(255, 26, 104, 1)',
+          'rgba(54, 162, 235, 1)',
+          'rgba(255, 206, 86, 1)',
+          'rgba(75, 192, 192, 1)',
+          'rgba(153, 102, 255, 1)',
+          'rgba(255, 159, 64, 1)',
+          'rgba(0, 0, 0, 1)'
+        ],
+        random:['incompleted','incompleted','incompleted','incompleted','in the process','in the process','incompleted','incompleted','in the process','completed'],
+
+        borderWidth: 1
+      }]
+    };
+
+    // config 
+    var config5= {
+      type: 'bar',
+      data,
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        },
+        plugins:{
+          tooltip:{
+            enabled:false
+          },
+          datalabels:{
+            anchor:'end',
+            align:'top',
+            formatter: (value, context) => {
+              console.log(context.active)
+              if(context.active === true){
+              return context.dataset.random[context.dataIndex];
+              }else{
+                return value;
+              }
+            }
+          }
+        }
+      },
+      plugins:[ChartDataLabels]
+    };
+
+
+    // render init block
+    var myChart5 = new Chart(
+      document.getElementById('myChart5'),
+      config5
+    );
+    </script>
+
+  </body>
+</html>
